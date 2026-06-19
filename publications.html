@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<meta name="description" content="Publications by Hanyuan Zhang." />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/custom.css?v=6" />
+		<link rel="stylesheet" href="assets/css/custom.css?v=7" />
 	</head>
 	<body class="is-preload">
 
@@ -39,6 +39,12 @@
 						<h2>Publications</h2>
 					</header>
 					<p>Selected publications from my <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0009-0005-6898-0927&sort=date%20desc%2C%20bibcode%20desc" target="_blank" rel="noopener">ADS record</a>. Entries are grouped by publication year, with first-author papers shown before co-authored work within each year.</p>
+
+					<div class="pub-filter">
+						<label class="pub-filter-label" for="pub-filter-input">Filter publications</label>
+						<input id="pub-filter-input" class="pub-filter-input" type="search" placeholder="Type to filter by title, author, journal, or year" autocomplete="off" />
+					</div>
+					<p id="pub-filter-empty" class="pub-filter-empty" hidden>No publications match that filter.</p>
 
 					<div class="pub-year-group">
 						<h3>2026</h3>
@@ -208,6 +214,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/custom.js?v=3"></script>
 
 	</body>
 </html>

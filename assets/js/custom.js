@@ -34,3 +34,41 @@
 	// Open the first project by default so the section isn't empty.
 	show(tiles[0].getAttribute('data-target'));
 })();
+
+// ---- Publications: live filter ----
+// Filters by anything visible in each publication entry and hides empty years.
+(function () {
+	var input = document.getElementById('pub-filter-input');
+	if (!input) return;
+
+	var yearGroups = Array.prototype.slice.call(document.querySelectorAll('.pub-year-group'));
+	var emptyState = document.getElementById('pub-filter-empty');
+
+	function normalize(text) {
+		return (text || '').toLowerCase().replace(/\s+/g, ' ').trim();
+	}
+
+	function applyFilter() {
+		var query = normalize(input.value);
+		var anyVisible = false;
+
+		yearGroups.forEach(function (group) {
+			var items = Array.prototype.slice.call(group.querySelectorAll('.pub-item'));
+			var visibleInGroup = 0;
+
+			items.forEach(function (item) {
+				var matches = !query || normalize(item.textContent).indexOf(query) !== -1;
+				item.hidden = !matches;
+				if (matches) visibleInGroup += 1;
+			});
+
+			group.hidden = (visibleInGroup === 0);
+			if (visibleInGroup > 0) anyVisible = true;
+		});
+
+		if (emptyState) emptyState.hidden = anyVisible;
+	}
+
+	input.addEventListener('input', applyFilter);
+	applyFilter();
+})();
