@@ -1,0 +1,260 @@
+/* ============================================================
+   Custom additions on top of Strata (HTML5 UP)
+   - Clickable sidebar navigation with active-section highlight
+   - Publication list styling
+   ============================================================ */
+
+html { scroll-behavior: smooth; }
+
+/* ---- Larger sidebar headshot (Strata default is 6.25em) ---- */
+#header .image.avatar {
+	width: 12em;
+}
+
+/* ---- Galaxy image as the sidebar background ----
+   Layers (top to bottom): dark gradient for text contrast,
+   Strata's overlay texture, then the galaxy photo. */
+#header {
+	background-color: #0b0a12;
+	background-image:
+		linear-gradient(rgba(13, 10, 20, 0.32), rgba(13, 10, 20, 0.55)),
+		url("images/overlay.png"),
+		url("../../images/galaxy_rot.jpg");
+	background-position: center, top left, center;
+	background-repeat: no-repeat, repeat, no-repeat;
+	background-size: cover, auto, cover;
+	background-attachment: scroll, scroll, scroll;
+	/* Center everything in the sidebar (Strata defaults to right-aligned) */
+	text-align: center;
+	align-items: center;
+	/* Soft shadow so text stays legible over the galaxy */
+	text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* ---- Sidebar text sizing ---- */
+/* Position + institute lines: smaller and a bit brighter */
+#header h1 {
+	font-size: 1.05em;
+	color: rgba(255, 255, 255, 0.8);
+	line-height: 1.6em;
+}
+/* Name: bigger and bright white */
+#header h1 strong {
+	display: inline-block;
+	font-size: 1.9em;
+	line-height: 1.2;
+	color: #ffffff;
+	margin-bottom: 0.15em;
+}
+
+/* ---- Sidebar navigation ---- */
+#site-nav {
+	margin-top: 1.5em;
+	width: 100%;
+}
+
+#site-nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.15em;
+}
+
+#site-nav li {
+	padding: 0;
+}
+
+#site-nav a {
+	display: inline-block;
+	text-align: center;
+	padding: 0.55em 1em;
+	border-radius: 6px;
+	font-size: 1.1em;
+	font-weight: 600;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.85);
+	border: 0;
+	text-decoration: none;
+	transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#site-nav a:hover {
+	background-color: rgba(73, 191, 157, 0.1);
+	color: #49bf9d;
+}
+
+#site-nav a.active {
+	background-color: #49bf9d;
+	color: #ffffff;
+}
+
+/* On wide screens the sidebar is vertical; keep the nav stacked.
+   On narrow screens Strata turns the header into a top banner,
+   so lay the nav out horizontally and let it wrap. */
+@media screen and (max-width: 980px) {
+	#site-nav ul {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.4em;
+	}
+	#site-nav a {
+		padding: 0.4em 0.8em;
+	}
+}
+
+/* ---- Research: clickable project tiles ---- */
+.project-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1.25em;
+	margin: 1.5em 0;
+}
+
+/* Fewer columns as the viewport narrows */
+@media screen and (max-width: 736px) {
+	.project-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media screen and (max-width: 480px) {
+	.project-grid { grid-template-columns: 1fr; }
+}
+
+.project-tile {
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+	border: 1px solid #e7e7e7;
+	border-radius: 8px;
+	background: #ffffff;
+	cursor: pointer;
+	overflow: hidden;
+	text-align: center;
+	transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+.project-tile:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+	border-color: #49bf9d;
+}
+
+.project-tile.active {
+	border-color: #49bf9d;
+	box-shadow: 0 0 0 2px #49bf9d;
+}
+
+.project-thumb {
+	display: block;
+	aspect-ratio: 4 / 3;
+	background: #f1f3f4;
+	position: relative;
+}
+
+.project-tile .thumb-placeholder {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #aab0b3;
+	font-size: 0.85em;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	border-bottom: 2px dashed #d6dadc;
+}
+
+/* When you drop a real image in, it fills the thumb nicely */
+.project-thumb img {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.project-name {
+	padding: 0.7em 0.5em;
+	font-weight: 600;
+	font-size: 0.95em;
+	color: #3c3b3b;
+	transition: color 0.2s ease;
+}
+
+.project-tile:hover .project-name,
+.project-tile.active .project-name {
+	color: #49bf9d;
+}
+
+/* ---- Research: detail panel ---- */
+.project-detail[hidden] { display: none; }
+
+.project-detail {
+	border: 1px solid #e7e7e7;
+	border-top: 3px solid #49bf9d;
+	border-radius: 8px;
+	padding: 1.5em 1.75em;
+	background: #ffffff;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+	animation: detail-fade 0.25s ease;
+}
+
+.project-detail h3 {
+	margin-top: 0;
+	color: #3c3b3b;
+}
+
+@keyframes detail-fade {
+	from { opacity: 0; transform: translateY(6px); }
+	to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Figure placeholder (swap the inner div for an <img> when ready) */
+.topic-figure {
+	margin: 0 0 1.25em 0;
+}
+.figure-placeholder {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	aspect-ratio: 16 / 9;
+	border: 2px dashed #cdd2d4;
+	border-radius: 6px;
+	background: #f7f8f9;
+	color: #9aa0a3;
+	font-size: 0.95em;
+	letter-spacing: 0.03em;
+}
+.figure-placeholder small {
+	color: #b3b8bb;
+	font-size: 0.8em;
+}
+.topic-figure img {
+	width: 100%;
+	border-radius: 6px;
+	display: block;
+}
+.topic-figure figcaption {
+	margin-top: 0.5em;
+	font-size: 0.85em;
+	color: #909090;
+	font-style: italic;
+}
+
+/* ---- Publication list ---- */
+.pub-list {
+	margin: 1.5em 0 0 0;
+	padding-left: 1.5em;
+}
+
+.pub-list li {
+	margin-bottom: 1.25em;
+	line-height: 1.5;
+}
