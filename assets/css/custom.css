@@ -534,6 +534,20 @@ html { scroll-behavior: smooth; }
 	margin-bottom: 0;
 }
 
+.cv-award-link {
+	color: inherit;
+	text-decoration-line: underline;
+	text-decoration-style: dashed;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.16em;
+	transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.cv-award-link:hover {
+	color: #49bf9d;
+	text-decoration-color: #49bf9d;
+}
+
 .cv-awards {
 	display: grid;
 	gap: 1em;
