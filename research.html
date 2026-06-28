@@ -43,45 +43,50 @@
 
 					<!-- Grid of clickable project tiles -->
 					<div class="project-grid">
-						<button class="project-tile" type="button" data-target="proj-galactic-dynamics">
+						<button class="project-tile" type="button" data-target="proj-schwarzschild-modelling">
 							<span class="project-thumb">
-								<!-- Replace with: <img src="images/research/galactic-dynamics.jpg" alt="" /> -->
-								<span class="thumb-placeholder">Figure</span>
+								<img src="images/research/mock_correct_forplot_0531_discaligned.png" alt="Schwarzschild modelling comparison between model, data, and residual maps." />
 							</span>
-							<span class="project-name">Galactic Dynamics</span>
+							<span class="project-name">Schwarzschild Modelling</span>
 						</button>
 
-						<button class="project-tile" type="button" data-target="proj-stellar-kinematics">
+						<button class="project-tile" type="button" data-target="proj-disc-chemodynamical-evolution">
 							<span class="project-thumb">
-								<span class="thumb-placeholder">Figure</span>
+								<img src="images/research/bar-dynamics-orbits.png" alt="Disc chemodynamical evolution figure showing age-metallicity structure across guiding-radius bins." />
 							</span>
-							<span class="project-name">Stellar Kinematics</span>
+							<span class="project-name">Disc Chemodynamical Evolution</span>
 						</button>
 
-						<button class="project-tile" type="button" data-target="proj-dynamical-modelling">
+						<button class="project-tile" type="button" data-target="proj-bar-dynamics">
 							<span class="project-thumb">
-								<span class="thumb-placeholder">Figure</span>
+								<img src="images/research/disc-chemodynamical-evolution.png" alt="Bar dynamics figure showing orbital families in the Galactic bar." />
 							</span>
-							<span class="project-name">Dynamical Modelling</span>
+							<span class="project-name">Bar Dynamics</span>
 						</button>
 
-						<button class="project-tile" type="button" data-target="proj-another-theme">
+						<button class="project-tile" type="button" data-target="proj-variable-stars">
 							<span class="project-thumb">
-								<span class="thumb-placeholder">Figure</span>
+								<img src="images/research/variable-stars.png" alt="Variable stars figure showing age-period relations for long-period variables." />
 							</span>
-							<span class="project-name">Another Theme</span>
+							<span class="project-name">Variable Stars</span>
+						</button>
+
+						<button class="project-tile" type="button" data-target="proj-galactic-archaeology">
+							<span class="project-thumb">
+								<img src="images/research/galactic-archaeology.png" alt="Galactic archaeology figure showing rotational velocity as a function of metallicity." />
+							</span>
+							<span class="project-name">Galactic Archaeology</span>
 						</button>
 					</div>
 
 					<!-- Detail panels: one shows at a time when its tile is clicked -->
 					<div class="project-details">
 
-						<article id="proj-galactic-dynamics" class="project-detail" hidden>
-							<h3>Galactic Dynamics</h3>
+						<article id="proj-schwarzschild-modelling" class="project-detail" hidden>
+							<h3>Schwarzschild Modelling</h3>
 							<figure class="topic-figure">
-								<!-- Replace this box with: <img src="images/research/galactic-dynamics.jpg" alt="..." /> -->
-								<div class="figure-placeholder">Figure placeholder<br /><small>images/research/galactic-dynamics.jpg</small></div>
-								<figcaption>Add a one-line caption describing the figure.</figcaption>
+								<img src="images/research/mock_correct_forplot_0531_discaligned.png" alt="Comparison between Schwarzschild model predictions, data, and residual maps for surface density and kinematic observables." />
+								<figcaption>Example Schwarzschild-model comparison between mock data, best-fitting model observables, and residual maps.</figcaption>
 							</figure>
 							<p>Write the longer description here. Explain the questions you ask, the
 							methods you use, and the key results. Add links to <a href="#">papers</a>
@@ -89,10 +94,10 @@
 							<p>A second paragraph with more detail, collaborators, or future directions.</p>
 						</article>
 
-						<article id="proj-stellar-kinematics" class="project-detail" hidden>
-							<h3>Stellar Kinematics</h3>
+						<article id="proj-disc-chemodynamical-evolution" class="project-detail" hidden>
+							<h3>Disc Chemodynamical Evolution</h3>
 							<figure class="topic-figure">
-								<div class="figure-placeholder">Figure placeholder<br /><small>images/research/stellar-kinematics.jpg</small></div>
+								<div class="figure-placeholder">Figure placeholder<br /><small>images/research/disc-chemodynamical-evolution.jpg</small></div>
 								<figcaption>Add a one-line caption describing the figure.</figcaption>
 							</figure>
 							<p>Describe how you use large spectroscopic and astrometric surveys such as
@@ -100,25 +105,35 @@
 							the Galaxy.</p>
 						</article>
 
-						<article id="proj-dynamical-modelling" class="project-detail" hidden>
-							<h3>Dynamical Modelling</h3>
+						<article id="proj-bar-dynamics" class="project-detail" hidden>
+							<h3>Bar Dynamics</h3>
 							<figure class="topic-figure">
-								<div class="figure-placeholder">Figure placeholder<br /><small>images/research/dynamical-modelling.jpg</small></div>
+								<div class="figure-placeholder">Figure placeholder<br /><small>images/research/bar-dynamics.jpg</small></div>
 								<figcaption>Add a one-line caption describing the figure.</figcaption>
 							</figure>
 							<p>Detail your modelling techniques — Schwarzschild and made-to-measure
 							methods, radial migration, and bar dynamics.</p>
 						</article>
 
-						<article id="proj-another-theme" class="project-detail" hidden>
-							<h3>Another Theme</h3>
+						<article id="proj-variable-stars" class="project-detail" hidden>
+							<h3>Variable Stars</h3>
 							<figure class="topic-figure">
-								<div class="figure-placeholder">Figure placeholder<br /><small>images/research/another-theme.jpg</small></div>
+								<div class="figure-placeholder">Figure placeholder<br /><small>images/research/variable-stars.jpg</small></div>
 								<figcaption>Add a one-line caption describing the figure.</figcaption>
 							</figure>
-							<p>Add a fourth project here, or remove a tile and its matching detail
-							panel if three is enough. Each tile's <code>data-target</code> must match
-							the <code>id</code> of its detail panel.</p>
+							<p>Add detail here on long-period variables, RR Lyrae, or other stellar
+							tracers you use to map structure and evolution in the Milky Way.</p>
+						</article>
+
+						<article id="proj-galactic-archaeology" class="project-detail" hidden>
+							<h3>Galactic Archaeology</h3>
+							<figure class="topic-figure">
+								<div class="figure-placeholder">Figure placeholder<br /><small>images/research/galactic-archaeology.jpg</small></div>
+								<figcaption>Add a one-line caption describing the figure.</figcaption>
+							</figure>
+							<p>Add detail here on how you combine stellar populations, chemistry,
+							kinematics, and structure to reconstruct the formation history of the
+							Milky Way.</p>
 						</article>
 
 					</div>
