@@ -536,16 +536,18 @@ html { scroll-behavior: smooth; }
 
 .cv-award-link {
 	color: inherit;
-	text-decoration-line: underline;
-	text-decoration-style: dashed;
-	text-decoration-thickness: 1px;
-	text-underline-offset: 0.16em;
-	transition: color 0.2s ease, text-decoration-color 0.2s ease;
+	border-bottom: 0;
+	background-image: linear-gradient(currentColor, currentColor);
+	background-position: 0 100%;
+	background-repeat: repeat-x;
+	background-size: 100% 1px;
+	text-decoration: none;
+	transition: color 0.2s ease, background-size 0.2s ease;
 }
 
 .cv-award-link:hover {
 	color: #49bf9d;
-	text-decoration-color: #49bf9d;
+	background-size: 100% 1px;
 }
 
 .cv-awards {
